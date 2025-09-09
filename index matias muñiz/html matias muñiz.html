@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">a
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Recetas de Cocina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .recipe-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-gray-800" onclick="showPage('home')">Recetas del Chef</a>
+            <div class="mt-4 sm:mt-0 space-x-4">
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200" onclick="showPage('home')">Inicio</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200" onclick="showPage('caesar-salad')">Ensalada César</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200" onclick="showPage('pasta-carbonara')">Pasta Carbonara</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200" onclick="showPage('lentil-soup')">Sopa de Lentejas</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200" onclick="showPage('apple-pie')">Tarta de Manzana</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-semibold transition-colors duration-200" onclick="showPage('contact')">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Página de Inicio -->
+        <section id="home" class="page active">
+            <h1 class="text-5xl font-extrabold text-center text-gray-800 mb-8">Sabores del Mundo en tu Cocina</h1>
+            <p class="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">Explora nuestra colección de recetas deliciosas, fáciles de preparar y perfectas para cualquier ocasión. ¡Anímate a cocinar!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden recipe-card">
+                    <img src="https://placehold.co/600x400/1e40af/ffffff?text=Ensalada+C%C3%A9sar" alt="Ensalada César" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Ensalada César</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Una ensalada clásica y refrescante con lechuga crujiente, aderezo cremoso, crutones y queso parmesano.</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-200" onclick="showPage('caesar-salad')">Ver Receta</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-xl shadow-md overflow-hidden recipe-card">
+                    <img src="https://placehold.co/600x400/1d4ed8/ffffff?text=Pasta+Carbonara" alt="Pasta Carbonara" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Pasta Carbonara</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Un plato italiano icónico con una salsa cremosa a base de huevo, queso, panceta y pimienta negra.</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-200" onclick="showPage('pasta-carbonara')">Ver Receta</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-xl shadow-md overflow-hidden recipe-card">
+                    <img src="https://placehold.co/600x400/6b7280/ffffff?text=Sopa+de+Lentejas" alt="Sopa de Lentejas" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Sopa de Lentejas</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3">Una sopa reconfortante y nutritiva, ideal para los días fríos. Llena de verduras y sabor.</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-200" onclick="showPage('lentil-soup')">Ver Receta</a>
+                    </div>
+                </article>
+                <article class="bg-white rounded-xl shadow-md overflow-hidden recipe-card">
+                    <img src="https://placehold.co/600x400/9ca3af/ffffff?text=Tarta+de+Manzana" alt="Tarta de Manzana" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">Tarta de Manzana</h2>
+                        <p class="text-gray-600 mb-4 line-clamp-3">El postre casero por excelencia. Con un relleno dulce de manzanas y una masa dorada y crujiente.</p>
+                        <a href="#" class="inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-200" onclick="showPage('apple-pie')">Ver Receta</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Página de Ensalada César -->
+        <section id="caesar-salad" class="page">
+            <article class="bg-white rounded-xl shadow-md p-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Ensalada César Clásica</h1>
+                <p class="text-lg text-gray-600 mb-6">Una de las ensaladas más famosas y deliciosas del mundo. Perfecta como entrada o plato principal ligero.</p>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/1e40af/ffffff?text=Ensalada+C%C3%A9sar" alt="Ensalada César" class="w-full h-auto rounded-lg mb-6">
+                        <section class="mb-6">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ingredientes</h2>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>1 lechuga romana grande</li>
+                                <li>1 taza de crutones</li>
+                                <li>1/2 taza de queso parmesano rallado</li>
+                                <li>1/4 taza de mayonesa</li>
+                                <li>1 cucharada de mostaza Dijon</li>
+                                <li>Jugo de 1 limón</li>
+                                <li>2 dientes de ajo, picados</li>
+                                <li>Sal y pimienta al gusto</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="md:w-1/2">
+                        <section>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Instrucciones</h2>
+                            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li>Lava y seca la lechuga, córtala en trozos grandes y colócala en un bol.</li>
+                                <li>Para el aderezo, en un recipiente pequeño, mezcla la mayonesa, mostaza, jugo de limón, ajo, sal y pimienta.</li>
+                                <li>Vierte el aderezo sobre la lechuga y mezcla bien.</li>
+                                <li>Agrega los crutones y el queso parmesano, mezcla ligeramente y sirve inmediatamente.</li>
+                            </ol>
+                        </section>
+                        <button id="dom-btn" class="mt-6 bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors duration-200 shadow-md">
+                            Mostrar un dato curioso
+                        </button>
+                        <p id="dom-text" class="mt-4 text-gray-600 italic"></p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Página de Pasta Carbonara -->
+        <section id="pasta-carbonara" class="page">
+            <article class="bg-white rounded-xl shadow-md p-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Pasta Carbonara Clásica</h1>
+                <p class="text-lg text-gray-600 mb-6">Un plato italiano simple pero increíblemente rico. La clave está en la calidad de los ingredientes.</p>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/1d4ed8/ffffff?text=Pasta+Carbonara" alt="Pasta Carbonara" class="w-full h-auto rounded-lg mb-6">
+                        <section class="mb-6">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ingredientes</h2>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>400g de espagueti o bucatini</li>
+                                <li>200g de panceta o guanciale</li>
+                                <li>2 huevos grandes</li>
+                                <li>1 yema de huevo</li>
+                                <li>100g de queso Pecorino Romano o Parmigiano Reggiano</li>
+                                <li>Pimienta negra recién molida</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="md:w-1/2">
+                        <section>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Instrucciones</h2>
+                            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li>Cocina la pasta en agua con sal según las instrucciones del paquete.</li>
+                                <li>Mientras, corta la panceta en cubos pequeños y fríelos en una sartén hasta que estén crujientes. Retira del fuego.</li>
+                                <li>En un bol, bate los huevos, la yema y la mitad del queso. Agrega abundante pimienta negra.</li>
+                                <li>Escurre la pasta cocida, reservando una taza del agua de cocción.</li>
+                                <li>Vierte la pasta caliente en la sartén con la panceta. Mezcla bien.</li>
+                                <li>Rápidamente, agrega la mezcla de huevo y queso, revolviendo sin parar. El calor de la pasta cocinará los huevos. Agrega un poco del agua de cocción si necesitas una salsa más líquida.</li>
+                                <li>Sirve inmediatamente, espolvorea con el resto del queso y más pimienta.</li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Página de Sopa de Lentejas -->
+        <section id="lentil-soup" class="page">
+            <article class="bg-white rounded-xl shadow-md p-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Sopa de Lentejas Casera</h1>
+                <p class="text-lg text-gray-600 mb-6">Un plato reconfortante y lleno de nutrientes. Fácil de preparar y perfecto para cualquier día de la semana.</p>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/6b7280/ffffff?text=Sopa+de+Lentejas" alt="Sopa de Lentejas" class="w-full h-auto rounded-lg mb-6">
+                        <section class="mb-6">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ingredientes</h2>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>2 tazas de lentejas pardas secas</li>
+                                <li>1 cebolla, picada</li>
+                                <li>2 zanahorias, picadas</li>
+                                <li>2 ramas de apio, picadas</li>
+                                <li>2 dientes de ajo, picados</li>
+                                <li>1 lata de tomates picados</li>
+                                <li>8 tazas de caldo de verduras</li>
+                                <li>1 hoja de laurel</li>
+                                <li>Sal y pimienta al gusto</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="md:w-1/2">
+                        <section>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Instrucciones</h2>
+                            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li>Lava bien las lentejas y déjalas escurrir.</li>
+                                <li>En una olla grande, sofríe la cebolla, zanahorias y apio hasta que estén tiernos.</li>
+                                <li>Agrega el ajo y cocina por un minuto más.</li>
+                                <li>Incorpora las lentejas, los tomates, el caldo de verduras y la hoja de laurel. Lleva a ebullición.</li>
+                                <li>Reduce el fuego, tapa la olla y cocina a fuego lento por 30-40 minutos, o hasta que las lentejas estén blandas.</li>
+                                <li>Retira la hoja de laurel, salpimienta al gusto y sirve caliente.</li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Página de Tarta de Manzana -->
+        <section id="apple-pie" class="page">
+            <article class="bg-white rounded-xl shadow-md p-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Tarta de Manzana Clásica</h1>
+                <p class="text-lg text-gray-600 mb-6">El postre casero por excelencia, con un relleno de manzana especiado y una masa crujiente.</p>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/9ca3af/ffffff?text=Tarta+de+Manzana" alt="Tarta de Manzana" class="w-full h-auto rounded-lg mb-6">
+                        <section class="mb-6">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Ingredientes</h2>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li>2 masas de tarta (refrigeradas o caseras)</li>
+                                <li>6 manzanas, peladas y cortadas en láminas finas</li>
+                                <li>1/2 taza de azúcar morena</li>
+                                <li>2 cucharadas de harina</li>
+                                <li>1 cucharadita de canela en polvo</li>
+                                <li>1/4 cucharadita de nuez moscada</li>
+                                <li>Jugo de 1/2 limón</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="md:w-1/2">
+                        <section>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-4">Instrucciones</h2>
+                            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li>Precalienta el horno a 190°C (375°F).</li>
+                                <li>En un bol grande, mezcla las láminas de manzana con el azúcar, harina, canela, nuez moscada y jugo de limón.</li>
+                                <li>Coloca una de las masas en un molde para tarta. Vierte el relleno de manzana encima.</li>
+                                <li>Cubre con la segunda masa, sellando bien los bordes. Haz unos cortes en la parte superior para que salga el vapor.</li>
+                                <li>Hornea por 45-55 minutos, o hasta que la masa esté dorada y el relleno burbujee.</li>
+                                <li>Deja enfriar antes de servir.</li>
+                            </ol>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Página de Contacto -->
+        <section id="contact" class="page">
+            <div class="bg-white rounded-xl shadow-md p-8 max-w-lg mx-auto">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">Contáctanos</h1>
+                <p class="text-gray-600 mb-6 text-center">Envíanos un mensaje o sugerencia de receta. ¡Nos encantaría escucharte!</p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Nombre</label>
+                        <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tu nombre" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="tu-email@ejemplo.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tu mensaje..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors duration-200 shadow-lg">Enviar Mensaje</button>
+                    <p id="form-message" class="mt-4 text-center text-sm font-semibold"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Blog de Recetas de Cocina. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para cambiar de página
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // DOM Manipulation y Event Handling
+        const domButton = document.getElementById('dom-btn');
+        const domText = document.getElementById('dom-text');
+        domButton.addEventListener('click', () => {
+            domText.textContent = "¡La Ensalada César fue inventada en Tijuana, México, no en Italia!";
+            domButton.textContent = "¡Dato curioso mostrado!";
+            domButton.classList.add('bg-blue-500', 'hover:bg-blue-600', 'cursor-not-allowed');
+            domButton.classList.remove('bg-green-500', 'hover:bg-green-600');
+            domButton.disabled = true;
+        });
+
+        // Formulario de Contacto y Validación
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Previene el envío por defecto del formulario
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name === "" || email === "" || message === "") {
+                formMessage.textContent = "Por favor, completa todos los campos requeridos.";
+                formMessage.classList.add('text-red-600');
+                formMessage.classList.remove('text-green-600');
+            } else {
+                formMessage.textContent = "¡Gracias por tu mensaje! Lo hemos recibido correctamente.";
+                formMessage.classList.add('text-green-600');
+                formMessage.classList.remove('text-red-600');
+                contactForm.reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

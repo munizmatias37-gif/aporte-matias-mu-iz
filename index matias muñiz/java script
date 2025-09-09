@@ -1,0 +1,45 @@
+function showPage(pageId) {
+    constpages = document.querySelectorAll(page);
+    pages.forEach(page => {
+        page.classList.remove(active);
+    });
+    document.getElementById(pageId).classList.add(active);
+    window.scrollTo({ top: 0, behavior: smooth };
+}
+
+// DOM Manipulation: Dato curioso en Ensalada César
+constdomButton = document.getElementById(dom-btn);
+constdomText = document.getElementById(dom-text);
+if (domButton) {
+    domButton.addEventListener(click, () => {
+        domText.textContent = "¡La Ensalada César fue inventada en Tijuana, México, no en Italia!";
+        domButton.textContent = "¡Dato curioso mostrado!";
+        domButton.classList.add(bg-blue-500, hover:bg-blue-600, cursor-not-allowed');
+        domButton.classList.remove(bg-green-500, hover:bg-green-600');
+        domButton.disabled = true;
+    });
+}
+
+// Validación de Formulario de Contacto
+constcontactForm = document.getElementById(contact-form);
+constformMessage = document.getElementById(form-message);
+if (contactForm) {
+    contactForm.addEventListener(submit, (event) => {
+        event.preventDefault();
+
+        constname = document.getElementById(name).value;
+        constemail = document.getElementById(email).value;
+        constmessage = document.getElementById(message).value;
+
+        if (name === "" || email === "" || message === "") {
+            formMessage.textContent = "Por favor, completa todos los campos requeridos.";
+            formMessage.classList.add(text-red-600);
+            formMessage.classList.remove(text-green-600);
+        } else {
+            formMessage.textContent = "¡Gracias por tu mensaje! Lo hemos recibido correctamente.";
+            formMessage.classList.add(text-green-600);
+            formMessage.classList.remove(text-red-600);
+            contactForm.reset();
+        }
+    });
+}
